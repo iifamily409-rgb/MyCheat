@@ -20,18 +20,18 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      # 🟢 यहाँ हम Gradle को सीधे Install कर रहे हैं (Wrapper के बिना)
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.5'
 
-      # 🟢 अब सीधे 'gradle' command से Build करेंगे
       - name: Build with Gradle
-        run: gradle assembleDebug
+        run: |
+          cd MyCheat
+          gradle assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-debug
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: MyCheat/app/build/outputs/apk/debug/app-debug.apk
