@@ -1,0 +1,4 @@
+<resources> 
+    <string name="app_name">Carrom Cheat</string> 
+    <string name="access_desc">Allows touch simulation</string> 
+</resources> 
